@@ -1,0 +1,22 @@
+if __name__ == '__main__':
+    score_dict = {}
+    scores_list = []
+    
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        
+        if score in score_dict:
+            score_dict[score].append(name)
+        else:
+            score_dict[score] = [name]
+            if score not in scores_list:
+                scores_list.append(score)
+            
+    m = min(scores_list)
+    scores_list.remove(m)
+    m1 = min(scores_list)
+    
+    score_dict[m1].sort()
+    for i in score_dict[m1]:
+        print(i)
