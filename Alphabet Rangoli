@@ -1,0 +1,20 @@
+
+def print_rangoli(size):
+    # your code goes here
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    lines = []
+    
+    # Generate each row of the rangoli pattern
+    for i in range(size):
+        # Create characters for this row, centered with dashes
+        s = "-".join(alpha[size-1:i:-1] + alpha[i:size])
+        lines.append(s.center(4 * size - 3, "-"))
+        
+    # Print the pattern mirrored vertically
+    print("\n".join(lines[::-1] + lines[1:]))
+
+
+    
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
