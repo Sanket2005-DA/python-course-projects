@@ -1,0 +1,13 @@
+def minion_game(string):
+    # your code goes here
+    con, vow = 0, 0
+    for i, char in enumerate(string):
+        if char in 'AEIOU': vow += len(string) - i
+        else: con += len(string) - i
+    if con > vow: print(f"Stuart {con}")
+    elif con == vow: print("Draw")
+    else: print(f"Kevin {vow}")
+        
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
