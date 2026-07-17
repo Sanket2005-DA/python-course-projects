@@ -1,0 +1,14 @@
+def merge_the_tools(string, k):
+    # your code goes here
+    for i in range(0, len(string), k):
+        chunk = string[i:i+k]
+        
+        unique_chars = {}
+        for char in chunk:
+            unique_chars[char] = True
+            
+        print("".join(unique_chars.keys()))
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
